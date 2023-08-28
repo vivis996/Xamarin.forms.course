@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new GreetPage();
         }
 
         protected override void OnStart ()
@@ -26,4 +26,3 @@ namespace xamarin.forms.course
         }
     }
 }
-
