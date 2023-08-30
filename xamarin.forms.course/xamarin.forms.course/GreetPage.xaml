@@ -3,5 +3,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="xamarin.forms.course.GreetPage">
-    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Hello World!" />
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Hello World!" />
+        <Slider />
+    </StackLayout>
 </ContentPage>
