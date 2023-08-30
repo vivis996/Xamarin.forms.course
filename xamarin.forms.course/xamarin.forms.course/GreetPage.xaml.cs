@@ -7,11 +7,13 @@ namespace xamarin.forms.course
         public GreetPage()
         {
             InitializeComponent();
-        }
 
-        void Button_Clicked(object sender, System.EventArgs e)
-        {
-            DisplayAlert("Title", "Hello World", "Ok");
+            //Content = new Label
+            //{
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    VerticalOptions = LayoutOptions.Center,
+            //    Text = "Hello World",
+            //};
         }
     }
 }
