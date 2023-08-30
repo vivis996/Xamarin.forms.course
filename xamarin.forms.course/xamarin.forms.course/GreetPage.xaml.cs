@@ -8,12 +8,12 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            //Content = new Label
-            //{
-            //    HorizontalOptions = LayoutOptions.Center,
-            //    VerticalOptions = LayoutOptions.Center,
-            //    Text = "Hello World",
-            //};
+            slider.Value = 0.5;
+        }
+
+        public void Slider_ValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            label.Text = string.Format("Value is {0:F2}", e.NewValue);
         }
     }
 }
