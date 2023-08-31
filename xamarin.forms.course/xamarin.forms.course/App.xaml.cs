@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new GridPage();
+            MainPage = new Layouts.GridPage();
         }
 
         protected override void OnStart ()
