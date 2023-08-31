@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Layouts.AbsoluteLayout();
+            MainPage = new Layouts.RelativePage();
         }
 
         protected override void OnStart ()
