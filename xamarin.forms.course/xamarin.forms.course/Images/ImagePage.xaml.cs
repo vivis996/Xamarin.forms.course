@@ -17,6 +17,7 @@ namespace xamarin.forms.course.Images
             //imageSource.CacheValidity = TimeSpan.FromHours(1);
 
             this.image.Source = imageSource;
+            //this.image.Aspect = Aspect.AspectFill;
             //this.image.Source = imagePath;
         }
     }
