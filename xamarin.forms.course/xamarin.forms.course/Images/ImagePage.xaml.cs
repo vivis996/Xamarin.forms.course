@@ -11,8 +11,8 @@ namespace xamarin.forms.course.Images
         {
             InitializeComponent();
 
-            const string imagePath = "xamarin.forms.course.files.images.background.jpg";
-            this.image.Source = ImageSource.FromResource(imagePath);
+            //const string imagePath = "xamarin.forms.course.files.images.background.jpg";
+            //this.image.Source = ImageSource.FromResource(imagePath);
         }
     }
 }
