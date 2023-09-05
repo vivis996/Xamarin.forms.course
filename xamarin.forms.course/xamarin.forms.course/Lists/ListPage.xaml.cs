@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using xamarin.forms.course.Models;
 using Xamarin.Forms;
 
@@ -18,9 +19,9 @@ namespace xamarin.forms.course.Lists
             this.listView.ItemsSource = this._contacts;
         }
 
-        ObservableCollection<Contact> GetContacts()
+        ObservableCollection<Contact> GetContacts(string searchText = null)
         {
-            return new ObservableCollection<Contact>
+            var contacts = new ObservableCollection<Contact>
             {
                 new Contact
                 {
@@ -40,6 +41,14 @@ namespace xamarin.forms.course.Lists
                     Status = "I'm new here",
                 },
             };
+            if (!string.IsNullOrWhiteSpace(searchText))
+            {
+                return new ObservableCollection<Contact>(
+                    contacts.Where(c => c.Name.ToLower()
+                                            .StartsWith(searchText.ToLower())));
+            }
+
+            return contacts;
         }
 
         void listView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -74,6 +83,19 @@ namespace xamarin.forms.course.Lists
             this.listView.ItemsSource = this._contacts;
             //this.listView.IsRefreshing = false;
             this.listView.EndRefresh();
+        }
+
+        void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            this._contacts = this.GetContacts(e.NewTextValue);
+            this.listView.ItemsSource = this._contacts;
+        }
+
+        void SearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            // Execute by clic enter or Search button
+            this._contacts = this.GetContacts((sender as SearchBar).Text);
+            this.listView.ItemsSource = this._contacts;
         }
     }
 }
