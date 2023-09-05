@@ -57,11 +57,13 @@ namespace xamarin.forms.course.Lists
             //DisplayAlert("Tapped", contact.Name, "Ok");
         }
 
-        void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            //var contact = e.SelectedItem as Contact;
-            //DisplayAlert("Selected", contact.Name, "Ok");
-            listView.SelectedItem = null;
+            if (e.SelectedItem == null)
+                return;
+            var contact = e.SelectedItem as Contact;
+            await Navigation.PushAsync(new ContactDetailPage(contact));
+            this.listView.SelectedItem = null;
         }
 
         void Call_Clicked(object sender, EventArgs e)
