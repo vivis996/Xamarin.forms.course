@@ -5,7 +5,9 @@
     x:Class="xamarin.forms.course.Lists.ListPage">
     <ListView x:Name="listView" HasUnevenRows="True"
               ItemTapped="listView_ItemTapped"
-              ItemSelected="listView_ItemSelected">
+              ItemSelected="listView_ItemSelected"
+              IsPullToRefreshEnabled="True"
+              Refreshing="listView_Refreshing">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>

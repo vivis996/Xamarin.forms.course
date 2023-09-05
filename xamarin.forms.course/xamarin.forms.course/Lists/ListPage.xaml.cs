@@ -13,7 +13,14 @@ namespace xamarin.forms.course.Lists
         {
             InitializeComponent();
 
-            this._contacts = new ObservableCollection<Contact>
+            this._contacts = this.GetContacts();
+
+            this.listView.ItemsSource = this._contacts;
+        }
+
+        ObservableCollection<Contact> GetContacts()
+        {
+            return new ObservableCollection<Contact>
             {
                 new Contact
                 {
@@ -33,8 +40,6 @@ namespace xamarin.forms.course.Lists
                     Status = "I'm new here",
                 },
             };
-
-            this.listView.ItemsSource = this._contacts;
         }
 
         void listView_ItemTapped(object sender, ItemTappedEventArgs e)
@@ -61,6 +66,14 @@ namespace xamarin.forms.course.Lists
         {
             var contact = (sender as MenuItem).CommandParameter as Contact;
             this._contacts.Remove(contact);
+        }
+
+        void listView_Refreshing(object sender, EventArgs e)
+        {
+            this._contacts = this.GetContacts();
+            this.listView.ItemsSource = this._contacts;
+            //this.listView.IsRefreshing = false;
+            this.listView.EndRefresh();
         }
     }
 }
