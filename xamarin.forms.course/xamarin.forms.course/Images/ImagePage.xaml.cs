@@ -10,8 +10,6 @@ namespace xamarin.forms.course.Images
         public ImagePage()
         {
             InitializeComponent();
-
-            this.btn.ImageSource = ImageSource.FromFile("clock.png");
         }
     }
 }
