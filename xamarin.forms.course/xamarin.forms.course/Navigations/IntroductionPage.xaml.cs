@@ -13,7 +13,7 @@ namespace xamarin.forms.course.Navigations
 
         void Button_Clicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
+            Navigation.PopModalAsync();
         }
 
         protected override bool OnBackButtonPressed()
