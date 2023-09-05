@@ -11,8 +11,7 @@ namespace xamarin.forms.course.Images
         {
             InitializeComponent();
 
-            //const string imagePath = "xamarin.forms.course.files.images.background.jpg";
-            //this.image.Source = ImageSource.FromResource(imagePath);
+            this.btn.ImageSource = ImageSource.FromFile("clock.png");
         }
     }
 }

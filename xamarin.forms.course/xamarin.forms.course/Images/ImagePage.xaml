@@ -1,18 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    BackgroundColor="Black"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:xamarin.forms.course"
     x:Class="xamarin.forms.course.Images.ImagePage">
-    <AbsoluteLayout>
-        <ActivityIndicator IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"
-                           Color="White"
-                           AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100"
-                           AbsoluteLayout.LayoutFlags="PositionProportional" />
-        <Image Source="{local:EmbeddedImage xamarin.forms.course.files.images.background.jpg}"
-               x:Name="image" Aspect="Fill"
-               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
-               AbsoluteLayout.LayoutFlags="All" />
-    </AbsoluteLayout>
+    <Button x:Name="btn">
+        <Button.ImageSource>
+            <OnPlatform x:TypeArguments="FileImageSource">
+                <On Platform="Android">clock.png</On>
+                <On Platform="iOS">clock.png</On>
+            </OnPlatform>
+        </Button.ImageSource>
+    </Button>
 </ContentPage>

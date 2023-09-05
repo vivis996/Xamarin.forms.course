@@ -133,4 +133,9 @@
       <Name>xamarin.forms.course</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\clock%403x.png" />
+    <BundleResource Include="Resources\clock%402x.png" />
+    <BundleResource Include="Resources\clock.png" />
+  </ItemGroup>
 </Project>
