@@ -3,5 +3,16 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="xamarin.forms.course.Lists.ListPage">
-    <ListView x:Name="listView" SeparatorColor="Blue" />
+    <ListView x:Name="listView">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ImageCell Text="{Binding Name}"
+                           TextColor="Red"
+                           Detail="{Binding Status}"
+                           ImageSource="{Binding ImageUrl}"
+                           DetailColor="Aqua" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+              
 </ContentPage>

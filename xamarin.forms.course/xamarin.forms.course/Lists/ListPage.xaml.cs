@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using xamarin.forms.course.Models;
 using Xamarin.Forms;
 
 namespace xamarin.forms.course.Lists
@@ -11,14 +11,20 @@ namespace xamarin.forms.course.Lists
         {
             InitializeComponent();
 
-            var names = new List<string>
+            this.listView.ItemsSource = new List<Contact>
             {
-                "Daniel",
-                "John",
-                "Doe",
+                new Contact
+                {
+                    Name = "Daniel",
+                    ImageUrl = "https://bit.ly/3P5irC6",
+                },
+                new Contact
+                {
+                    Name = "John",
+                    ImageUrl = "https://bit.ly/3P5irC6",
+                    Status = "Hey!, let's talk",
+                },
             };
-
-            this.listView.ItemsSource = names;
         }
     }
 }
