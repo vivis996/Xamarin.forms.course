@@ -10,7 +10,11 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Lists.ListPage();
+            MainPage = new NavigationPage(new Navigations.WelcomePage())
+            {
+                BarBackgroundColor = Color.Gray,
+                BarTextColor = Color.White
+            };
         }
 
         protected override void OnStart ()
