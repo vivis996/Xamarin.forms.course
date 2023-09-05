@@ -11,32 +11,39 @@ namespace xamarin.forms.course.Lists
         {
             InitializeComponent();
 
-            this.listView.ItemsSource = new List<ContactGroup>
+            this.listView.ItemsSource = new List<Contact>
             {
-                new ContactGroup("D", "D")
+                new Contact
                 {
-                    new Contact
-                    {
-                        Name = "Daniel",
-                        ImageUrl = "https://bit.ly/3P5irC6",
-                    },
+                    Name = "Daniel",
+                    ImageUrl = "https://bit.ly/3P5irC6",
                 },
-                new ContactGroup("J", "J")
+                new Contact
                 {
-                    new Contact
-                    {
-                        Name = "John",
-                        ImageUrl = "https://bit.ly/3P5irC6",
-                        Status = "Hey!, let's talk",
-                    },
-                    new Contact
-                    {
-                        Name = "Joana",
-                        ImageUrl = "https://bit.ly/3P5irC6",
-                        Status = "I'm new here",
-                    },
+                    Name = "John",
+                    ImageUrl = "https://bit.ly/3P5irC6",
+                    Status = "Hey!, let's talk",
+                },
+                new Contact
+                {
+                    Name = "Joana",
+                    ImageUrl = "https://bit.ly/3P5irC6",
+                    Status = "I'm new here",
                 },
             };
+        }
+
+        void listView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            //var contact = e.Item as Contact;
+            //DisplayAlert("Tapped", contact.Name, "Ok");
+        }
+
+        void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //var contact = e.SelectedItem as Contact;
+            //DisplayAlert("Selected", contact.Name, "Ok");
+            listView.SelectedItem = null;
         }
     }
 }
