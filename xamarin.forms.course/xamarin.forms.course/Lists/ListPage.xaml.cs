@@ -11,18 +11,30 @@ namespace xamarin.forms.course.Lists
         {
             InitializeComponent();
 
-            this.listView.ItemsSource = new List<Contact>
+            this.listView.ItemsSource = new List<ContactGroup>
             {
-                new Contact
+                new ContactGroup("D", "D")
                 {
-                    Name = "Daniel",
-                    ImageUrl = "https://bit.ly/3P5irC6",
+                    new Contact
+                    {
+                        Name = "Daniel",
+                        ImageUrl = "https://bit.ly/3P5irC6",
+                    },
                 },
-                new Contact
+                new ContactGroup("J", "J")
                 {
-                    Name = "John",
-                    ImageUrl = "https://bit.ly/3P5irC6",
-                    Status = "Hey!, let's talk",
+                    new Contact
+                    {
+                        Name = "John",
+                        ImageUrl = "https://bit.ly/3P5irC6",
+                        Status = "Hey!, let's talk",
+                    },
+                    new Contact
+                    {
+                        Name = "Joana",
+                        ImageUrl = "https://bit.ly/3P5irC6",
+                        Status = "I'm new here",
+                    },
                 },
             };
         }
