@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Navigations.MasterPage.MyFlyoutPage();
+            MainPage = new Navigations.TabPage.MainPage();
         }
 
         protected override void OnStart()
