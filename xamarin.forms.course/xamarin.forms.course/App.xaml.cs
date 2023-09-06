@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Navigations.TabPage.MainPage();
+            MainPage = new Navigations.CarouselMainPage();
         }
 
         protected override void OnStart()
