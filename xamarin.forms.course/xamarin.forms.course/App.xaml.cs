@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Navigations.CarouselMainPage();
+            MainPage = new Navigations.PopupMainPage();
         }
 
         protected override void OnStart()
