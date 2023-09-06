@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace xamarin.forms.course.Lists
 {
-    public partial class ListPage : ContentPage
+    public partial class ListPage : MasterDetailPage
     {
         private ObservableCollection<Contact> _contacts;
 
@@ -57,13 +57,11 @@ namespace xamarin.forms.course.Lists
             //DisplayAlert("Tapped", contact.Name, "Ok");
         }
 
-        async void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem == null)
-                return;
             var contact = e.SelectedItem as Contact;
-            await Navigation.PushAsync(new ContactDetailPage(contact));
-            this.listView.SelectedItem = null;
+            this.Detail = new NavigationPage(new ContactDetailPage(contact));
+            this.IsPresented = false; // IsMasterPresented
         }
 
         void Call_Clicked(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Lists.ListPage());
+            MainPage = new Lists.ListPage();
         }
 
         protected override void OnStart ()
