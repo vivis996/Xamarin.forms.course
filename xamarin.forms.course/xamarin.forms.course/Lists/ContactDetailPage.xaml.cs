@@ -14,5 +14,11 @@ namespace xamarin.forms.course.Lists
 
             InitializeComponent();
         }
+
+        public ContactDetailPage()
+            : this(new Contact { Name = "Undefined" })
+        {
+
+        }
     }
 }
