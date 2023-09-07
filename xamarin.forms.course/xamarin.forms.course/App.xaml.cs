@@ -8,7 +8,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Forms.StepperPage();
+            MainPage = new Forms.FormsPage();
         }
 
         protected override void OnStart()
