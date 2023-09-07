@@ -12,6 +12,7 @@
     <StackLayout Padding="20">
         <Picker Title="Contact Method" BackgroundColor="Aqua"
                 x:Name="picker"
+                ItemDisplayBinding="{Binding Name}"
                 SelectedIndexChanged="contactMethods_SelectedIndexChanged">
             <Picker.Items>
                 <!--

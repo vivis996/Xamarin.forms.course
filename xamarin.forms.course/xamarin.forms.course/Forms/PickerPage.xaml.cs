@@ -7,26 +7,24 @@ namespace xamarin.forms.course.Forms
 {
     public partial class PickerPage : ContentPage
     {
-        private IList<ContactMethod> _contactMethods;
+        private List<ContactMethod> _contactMethods;
         public PickerPage()
         {
             InitializeComponent();
             this._contactMethods = this.GetContactMethods();
-            foreach (var method in this._contactMethods)
-            {
-                this.picker.Items.Add(method.Name);
-            }
+            this.picker.ItemsSource = this._contactMethods;
         }
 
         void contactMethods_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var name = this.picker.Items[picker.SelectedIndex];
-            var contactMethod = this._contactMethods
-                                        .Single(cm => cm.Name == name);
+            var contactMethod = this.picker.SelectedItem as ContactMethod;
+            if (contactMethod == null)
+                return;
+
             DisplayAlert("Selection", contactMethod.Name, "Ok");
         }
 
-        private IList<ContactMethod> GetContactMethods()
+        private List<ContactMethod> GetContactMethods()
         {
             return new List<ContactMethod>
             {
