@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace xamarin.forms.course
 {
@@ -10,7 +8,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Forms.SliderPage();
+            MainPage = new Forms.StepperPage();
         }
 
         protected override void OnStart()
