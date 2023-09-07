@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    x:Class="xamarin.forms.course.Forms.DateTimePage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android">0, 20, 0, 0</On>
+            <On Platform="iOS">0, 60, 0, 0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout Padding="20">
+        <DatePicker x:Name="datePicker"
+                    Date="{x:Static sys:DateTime.Today}"
+                    Format="d MMM yyyy"
+                    MinimumDate="1 Jan 2023"
+                    DateSelected="DatePicker_DateSelected"/>
+        <TimePicker Time="{Binding Source={x:Static sys:DateTime.Now},Path=TimeOfDay}"/>
+    </StackLayout>
+</ContentPage>
