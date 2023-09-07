@@ -8,7 +8,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Forms.DateTimePage();
+            MainPage = new Forms.TableViewPage();
         }
 
         protected override void OnStart()
