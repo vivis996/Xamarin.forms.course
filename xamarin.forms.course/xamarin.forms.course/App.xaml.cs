@@ -10,7 +10,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Forms.SwitchPage();
+            MainPage = new Forms.SliderPage();
         }
 
         protected override void OnStart()
