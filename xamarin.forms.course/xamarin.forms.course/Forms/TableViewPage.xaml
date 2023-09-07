@@ -2,7 +2,7 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:local="clr-namespace:xamarin.forms.course.Extensions"
     x:Class="xamarin.forms.course.Forms.TableViewPage">
     <StackLayout>
         <TableView Intent="Settings">
@@ -13,14 +13,8 @@
                            Keyboard="Text" />
                     <SwitchCell Text="Notifications" On="True"
                             OnChanged="SwitchCell_OnChanged"/>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal"
-                                     Padding="13, 0">
-                            <Label Text="Starts" VerticalOptions="Center" />
-                            <DatePicker Date="{x:Static sys:DateTime.Today}"
-                                        HorizontalOptions="EndAndExpand" />
-                        </StackLayout>
-                    </ViewCell>
+                    <local:DateCell Label="Starts"/>
+                    <local:DateCell Label="Ends"/>
                 </TableSection>
                 <TableSection Title="Basics 2">
                     <TextCell Text="Name" Detail="Daniel" />
