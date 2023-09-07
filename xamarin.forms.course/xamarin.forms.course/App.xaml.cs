@@ -8,7 +8,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Forms.FormsPage();
+            MainPage = new Forms.PickerPage();
         }
 
         protected override void OnStart()
