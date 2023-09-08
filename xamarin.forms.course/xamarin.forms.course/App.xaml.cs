@@ -25,7 +25,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new DataAccess.FileSystemPage();
+            MainPage = new DataAccess.SQLitePage();
         }
 
         protected override void OnStart()
