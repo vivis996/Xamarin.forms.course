@@ -10,20 +10,22 @@ namespace xamarin.forms.course.DataAccess
         public MainPage()
         {
             InitializeComponent();
-            if (Application.Current.Properties.ContainsKey("Name"))
-                this.title.Text = Application.Current.Properties["Name"].ToString();
-            if (Application.Current.Properties.ContainsKey("notificationsEnabled"))
-                this.notificationsEnabled.On = (bool)Application.Current.Properties["notificationsEnabled"];
+            BindingContext = Application.Current;
+
+            //var app = Application.Current as App;
+            //this.title.Text = app.Title;
+            //this.notificationsEnabled.On = app.NotificationsEnabled;
         }
 
-        void OnChange(object sender, EventArgs e)
-        {
-            Application.Current.Properties["Name"] = this.title.Text;
-            Application.Current.Properties["notificationsEnabled"] = this.notificationsEnabled.On;
+        //void OnChange(object sender, EventArgs e)
+        //{
+        //    var app = Application.Current as App;
+        //    app.Title = this.title.Text;
+        //    app.NotificationsEnabled = this.notificationsEnabled.On;
 
-            // Just to enforce
-            // Application.Current.SavePropertiesAsync();
-        }
+        //    // Just to enforce
+        //    // Application.Current.SavePropertiesAsync();
+        //}
 
         // If I have to change view I can use this to
         // enforce the data saving
