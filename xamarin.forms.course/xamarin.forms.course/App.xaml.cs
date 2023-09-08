@@ -8,7 +8,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new Forms.TableViewPage();
+            MainPage = new NavigationPage(new Forms.TableViewPage());
         }
 
         protected override void OnStart()

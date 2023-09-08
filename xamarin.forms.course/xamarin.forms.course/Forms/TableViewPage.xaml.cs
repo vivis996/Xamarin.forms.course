@@ -16,5 +16,16 @@ namespace xamarin.forms.course.Forms
         {
             DisplayAlert("Changing switch", e.Value.ToString(), "Ok");
         }
+
+        void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            var page = new ContactMethodsPage();
+            page.ContactMethods.ItemSelected += (source, args) =>
+            {
+                this.contactMethod.Text = args.SelectedItem.ToString();
+                Navigation.PopAsync();
+            };
+            Navigation.PushAsync(page);
+        }
     }
 }
