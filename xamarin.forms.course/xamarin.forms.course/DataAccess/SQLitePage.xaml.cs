@@ -19,7 +19,6 @@ namespace xamarin.forms.course.DataAccess
             InitializeComponent();
 
             this._connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-            
         }
 
         protected override async void OnAppearing()
