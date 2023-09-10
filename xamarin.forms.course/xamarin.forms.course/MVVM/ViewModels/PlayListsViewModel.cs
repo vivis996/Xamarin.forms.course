@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using xamarin.forms.course.MMVM.Views;
 using Xamarin.Forms;
@@ -17,7 +18,8 @@ namespace xamarin.forms.course.MVVM.ViewModels
             set => SetValue(ref this._selectedPlaylist, value);
         }
 
-        public ICommand AddPlaylistCommand { get; set; }
+        public ICommand AddPlaylistCommand { get; private set; }
+        public ICommand SelectPlaylistCommand { get; private set; }
 
         private readonly IPageService _pageService;
         public PlayListsViewModel(IPageService pageService)
@@ -25,6 +27,7 @@ namespace xamarin.forms.course.MVVM.ViewModels
             this._pageService = pageService;
 
             this.AddPlaylistCommand = new Command(AddPlaylist);
+            this.SelectPlaylistCommand = new Command<PlaylistViewModel>(async vm => await SelectPlayList(vm));
         }
 
         private void AddPlaylist()
@@ -34,7 +37,7 @@ namespace xamarin.forms.course.MVVM.ViewModels
             this.Playlists.Add(new PlaylistViewModel { Title = newPlaylist });
         }
 
-        public async void SelectPlayList(PlaylistViewModel playlist)
+        private async Task SelectPlayList(PlaylistViewModel playlist)
         {
             if (playlist is null)
                 return;

@@ -1,14 +1,19 @@
-﻿using System;
-using xamarin.forms.course.MVVM.ViewModels;
+﻿using xamarin.forms.course.MVVM.ViewModels;
 using Xamarin.Forms;
 
 namespace xamarin.forms.course.MMVM.Views
 {
     public partial class PlaylistsPage : ContentPage
     {
+        private PlayListsViewModel ViewModel
+        {
+            get => this.BindingContext as PlayListsViewModel;
+            set => this.BindingContext = value;
+        }
+
         public PlaylistsPage()
         {
-            this.BindingContext = new PlayListsViewModel(new PageService());
+            this.ViewModel = new PlayListsViewModel(new PageService());
             InitializeComponent();
         }
 
@@ -20,7 +25,7 @@ namespace xamarin.forms.course.MMVM.Views
         void OnPlaylistSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var playlist = e.SelectedItem as PlaylistViewModel;
-            (this.BindingContext as PlayListsViewModel).SelectPlayList(playlist);
+            this.ViewModel.SelectPlaylistCommand.Execute(playlist);
         }
     }
 }
