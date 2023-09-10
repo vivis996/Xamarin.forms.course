@@ -8,10 +8,12 @@ namespace xamarin.forms.course.MVVM.ViewModels
 {
     public class PlayListsViewModel : BaseViewModel
     {
+        private PlaylistViewModel _selectedPlaylist;
+        private readonly IPageService _pageService;
+
         public ObservableCollection<PlaylistViewModel> Playlists { get; private set; } =
                      new ObservableCollection<PlaylistViewModel>();
 
-        private PlaylistViewModel _selectedPlaylist;
         public PlaylistViewModel SelectedPlaylist
         {
             get => this._selectedPlaylist;
@@ -21,7 +23,6 @@ namespace xamarin.forms.course.MVVM.ViewModels
         public ICommand AddPlaylistCommand { get; private set; }
         public ICommand SelectPlaylistCommand { get; private set; }
 
-        private readonly IPageService _pageService;
         public PlayListsViewModel(IPageService pageService)
         {
             this._pageService = pageService;
