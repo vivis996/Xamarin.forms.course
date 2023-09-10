@@ -25,7 +25,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new DataAccess.RestApiPage();
+            MainPage = new NavigationPage(new MMVM.Views.PlaylistsPage());
         }
 
         protected override void OnStart()
