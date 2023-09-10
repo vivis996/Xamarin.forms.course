@@ -5,11 +5,11 @@ namespace xamarin.forms.course.MVVM.ViewModels
 {
     public class PlayListsViewModel : BaseViewModel
     {
-        public ObservableCollection<Playlist> Playlists { get; private set; } =
-                     new ObservableCollection<Playlist>();
+        public ObservableCollection<PlaylistViewModel> Playlists { get; private set; } =
+                     new ObservableCollection<PlaylistViewModel>();
 
-        private Playlist _selectedPlaylist;
-        public Playlist SelectedPlaylist
+        private PlaylistViewModel _selectedPlaylist;
+        public PlaylistViewModel SelectedPlaylist
         {
             get => this._selectedPlaylist;
             set => SetValue(ref this._selectedPlaylist, value);
@@ -19,10 +19,10 @@ namespace xamarin.forms.course.MVVM.ViewModels
         {
             var newPlaylist = "Playlist " + (this.Playlists.Count + 1);
 
-            this.Playlists.Add(new Playlist { Title = newPlaylist });
+            this.Playlists.Add(new PlaylistViewModel { Title = newPlaylist });
         }
 
-        public void SelectPlayList(Playlist playlist)
+        public void SelectPlayList(PlaylistViewModel playlist)
         {
             if (playlist is null)
                 return;

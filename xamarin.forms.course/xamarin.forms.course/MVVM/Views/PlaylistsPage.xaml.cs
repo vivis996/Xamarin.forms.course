@@ -25,7 +25,7 @@ namespace xamarin.forms.course.MMVM.Views
 
         void OnPlaylistSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var playlist = e.SelectedItem as Playlist;
+            var playlist = e.SelectedItem as PlaylistViewModel;
             (this.BindingContext as PlayListsViewModel).SelectPlayList(playlist);
         }
     }
