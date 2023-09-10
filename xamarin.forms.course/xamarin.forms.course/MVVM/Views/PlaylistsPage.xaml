@@ -6,7 +6,7 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Clicked="OnAddPlaylist" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="playlistsListView"
+    <ListView
               ItemsSource="{Binding Playlists}"
               SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}"
               ItemSelected="OnPlaylistSelected">

@@ -3,12 +3,17 @@ using xamarin.forms.course.MMVM.Models;
 
 namespace xamarin.forms.course.MVVM.ViewModels
 {
-    public class PlayListsViewModel
+    public class PlayListsViewModel : BaseViewModel
     {
         public ObservableCollection<Playlist> Playlists { get; private set; } =
                      new ObservableCollection<Playlist>();
 
-        public Playlist SelectedPlaylist { get; set; }
+        private Playlist _selectedPlaylist;
+        public Playlist SelectedPlaylist
+        {
+            get => this._selectedPlaylist;
+            set => SetValue(ref this._selectedPlaylist, value);
+        }
 
         public void AddPlaylist()
         {
