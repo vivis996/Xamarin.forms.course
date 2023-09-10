@@ -1,5 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using xamarin.forms.course.MMVM.Models;
+using xamarin.forms.course.MMVM.Views;
 
 namespace xamarin.forms.course.MVVM.ViewModels
 {
@@ -13,6 +13,13 @@ namespace xamarin.forms.course.MVVM.ViewModels
         {
             get => this._selectedPlaylist;
             set => SetValue(ref this._selectedPlaylist, value);
+
+        }
+
+        private readonly IPageService _pageService;
+        public PlayListsViewModel(IPageService pageService)
+        {
+            this._pageService = pageService;
         }
 
         public void AddPlaylist()
@@ -22,7 +29,7 @@ namespace xamarin.forms.course.MVVM.ViewModels
             this.Playlists.Add(new PlaylistViewModel { Title = newPlaylist });
         }
 
-        public void SelectPlayList(PlaylistViewModel playlist)
+        public async void SelectPlayList(PlaylistViewModel playlist)
         {
             if (playlist is null)
                 return;
@@ -30,7 +37,7 @@ namespace xamarin.forms.course.MVVM.ViewModels
             playlist.IsFavorite = !playlist.IsFavorite;
 
             this.SelectedPlaylist = null;
-            //await Navigation.PushAsync (new PlaylistDetailPage(playlist));
+            await this._pageService.PushAsync(new PlaylistDetailPage(playlist));
         }
     }
 }

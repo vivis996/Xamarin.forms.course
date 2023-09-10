@@ -1,13 +1,13 @@
-﻿using xamarin.forms.course.MMVM.Models;
+﻿using xamarin.forms.course.MVVM.ViewModels;
 using Xamarin.Forms;
 
 namespace xamarin.forms.course.MMVM.Views
 {
     public partial class PlaylistDetailPage : ContentPage
     {
-        private Playlist _playlist;
+        private PlaylistViewModel _playlist;
 
-        public PlaylistDetailPage(Playlist playlist)
+        public PlaylistDetailPage(PlaylistViewModel playlist)
         {
             this._playlist = playlist;
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using xamarin.forms.course.MMVM.Models;
 using xamarin.forms.course.MVVM.ViewModels;
 using Xamarin.Forms;
 
@@ -9,7 +8,7 @@ namespace xamarin.forms.course.MMVM.Views
     {
         public PlaylistsPage()
         {
-            this.BindingContext = new PlayListsViewModel();
+            this.BindingContext = new PlayListsViewModel(new PageService());
             InitializeComponent();
         }
 
