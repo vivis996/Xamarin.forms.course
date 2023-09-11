@@ -25,7 +25,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new BeyondBasics.MainPage();
+            MainPage = new NavigationPage(new BeyondBasics.MessagingCenterPage());
         }
 
         protected override void OnStart()
