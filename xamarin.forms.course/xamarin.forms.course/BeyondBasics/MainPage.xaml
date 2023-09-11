@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="xamarin.forms.course.BeyondBasics.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="buttonBackgroundColor">Green</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android">0, 20, 0, 0</On>
+            <On Platform="iOS">0, 60, 0, 0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout Spacing="20" VerticalOptions="Center">
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <Color x:Key="textColor">White</Color>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        <Button Text="Login" 
+			BackgroundColor="{StaticResource buttonBackgroundColor}" 
+			TextColor="{StaticResource textColor}"
+			CornerRadius="{StaticResource borderRadius}"
+			FontAttributes="Bold" />
+
+        <Button Text="Register" 
+			BackgroundColor="{StaticResource buttonBackgroundColor}" 
+			TextColor="{StaticResource textColor}"
+			CornerRadius="{StaticResource borderRadius}"
+			FontAttributes="Bold" />
+    </StackLayout>
+</ContentPage>

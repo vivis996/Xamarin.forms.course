@@ -25,7 +25,7 @@ namespace xamarin.forms.course
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MMVM.Views.PlaylistsPage());
+            MainPage = new BeyondBasics.MainPage();
         }
 
         protected override void OnStart()
