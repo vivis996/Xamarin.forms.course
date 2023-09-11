@@ -9,16 +9,18 @@ namespace xamarin.forms.course.BeyondBasics
         public MessagingCenterPage()
         {
             InitializeComponent();
+
+            MessagingCenter.Subscribe<TargetPage, double>(this, "SliderValueChanged", this.OnSliderValueChanged);
+            // If I don't need the "event" anymore
+            //MessagingCenter.Unsubscribe<MainPage>(this, "SliderValueChanged");
         }
 
         void Button_Clicked(object sender, EventArgs e)
         {
-            var page = new TargetPage();
-            page.SliderValueChanged += OnSliderValueChanged;
-            this.Navigation.PushAsync(page);
+            this.Navigation.PushAsync(new TargetPage());
         }
 
-        private void OnSliderValueChanged(object source, double newValue)
+        private void OnSliderValueChanged(TargetPage source, double newValue)
         {
             this.label.Text = newValue.ToString();
         }

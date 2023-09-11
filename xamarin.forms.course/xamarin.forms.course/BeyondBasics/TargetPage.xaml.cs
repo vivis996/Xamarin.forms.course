@@ -1,13 +1,9 @@
-﻿using System;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace xamarin.forms.course.BeyondBasics
 {
     public partial class TargetPage : ContentPage
     {
-        public event EventHandler<double> SliderValueChanged;
-
         public TargetPage()
         {
             InitializeComponent();
@@ -15,7 +11,7 @@ namespace xamarin.forms.course.BeyondBasics
 
         void slider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            this.SliderValueChanged?.Invoke(this, e.NewValue);
+            MessagingCenter.Send(this, "SliderValueChanged", e.NewValue);
         }
     }
 }
