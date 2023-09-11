@@ -11,7 +11,7 @@ namespace xamarin.forms.course.BeyondBasics
 
         void slider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            MessagingCenter.Send(this, "SliderValueChanged", e.NewValue);
+            MessagingCenter.Send(this, Events.SliderValueChanged, e.NewValue);
         }
     }
 }

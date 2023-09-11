@@ -10,7 +10,7 @@ namespace xamarin.forms.course.BeyondBasics
         {
             InitializeComponent();
 
-            MessagingCenter.Subscribe<TargetPage, double>(this, "SliderValueChanged", this.OnSliderValueChanged);
+            MessagingCenter.Subscribe<TargetPage, double>(this, Events.SliderValueChanged, this.OnSliderValueChanged);
             // If I don't need the "event" anymore
             //MessagingCenter.Unsubscribe<MainPage>(this, "SliderValueChanged");
         }
