@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="xamarin.forms.course.Forms.FormsPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android">0, 20, 0, 0</On>
+            <On Platform="iOS">0, 60, 0, 0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout Padding="20">
+        <Entry Keyboard="Default" Placeholder="Default" />
+        <Entry Keyboard="Numeric" Placeholder="Numeric" />
+        <Entry Keyboard="Telephone" Placeholder="Phone" />
+        <Entry Keyboard="Email" Placeholder="Email" />
+        <Entry Keyboard="Url" Placeholder="Url" />
+        <Entry Keyboard="Text" Placeholder="Text" />
+        <Entry Keyboard="Plain" Placeholder="Plain" />
+        <Entry Keyboard="Chat" Placeholder="Chat" />
+        <Entry IsPassword="True" Completed="Entry_Completed"
+               TextChanged="Entry_TextChanged" />
+        <Label x:Name="label" />
+        <Editor BackgroundColor="Yellow" VerticalOptions="FillAndExpand"/>
+        <Label Text="Sample 1" />
+        <Label Text="Sample 2" />
+    </StackLayout>
+</ContentPage>

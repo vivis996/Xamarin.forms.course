@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:xamarin.forms.course.Extensions"
+    x:Class="xamarin.forms.course.Forms.TableViewPage">
+    <StackLayout>
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Basics">
+                    <TextCell Text="Name" Detail="Daniel" />
+                    <EntryCell Label="Title" Placeholder="(eg Shooping)"
+                           Keyboard="Text" />
+                    <SwitchCell Text="Notifications" On="True"
+                            OnChanged="SwitchCell_OnChanged"/>
+                    <local:DateCell Label="Starts"/>
+                    <local:DateCell Label="Ends"/>
+                    <ViewCell Tapped="ViewCell_Tapped">
+                        <StackLayout Orientation="Horizontal" Padding="13, 5">
+                            <Label Text="Contact Method" VerticalOptions="Center" />
+                            <Label x:Name="contactMethod"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="EndAndExpand"
+                                   Text="None"
+                                   TextColor="Gray" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                <TableSection Title="Basics 2">
+                    <TextCell Text="Name" Detail="Daniel" />
+                    <EntryCell Label="Title" Placeholder="(eg Shooping)"
+                           Keyboard="Text" />
+                    <SwitchCell Text="Notifications" On="True"
+                            OnChanged="SwitchCell_OnChanged"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Another Table for Basics">
+                    <TextCell Text="Name" Detail="Daniel" />
+                    <EntryCell Label="Title" Placeholder="(eg Shooping)"
+                           Keyboard="Text" />
+                    <SwitchCell Text="Notifications" On="True"
+                            OnChanged="SwitchCell_OnChanged"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
+</ContentPage>

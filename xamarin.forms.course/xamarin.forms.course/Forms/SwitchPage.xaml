@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="xamarin.forms.course.Forms.SwitchPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android">0, 20, 0, 0</On>
+            <On Platform="iOS">0, 60, 0, 0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout>
+        <Switch IsToggled="True" x:Name="switch"/>
+        <Label Text="Content Info" x:Name="label"
+               IsVisible="{Binding Source={x:Reference switch}, Path=IsToggled}"/>
+    </StackLayout>
+</ContentPage>

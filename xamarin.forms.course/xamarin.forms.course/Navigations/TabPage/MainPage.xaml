@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<TabbedPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="xamarin.forms.course.Navigations.TabPage.MainPage"
+    xmlns:local="clr-namespace:xamarin.forms.course.Navigations.TabPage"
+    xmlns:masterPage="clr-namespace:xamarin.forms.course.Navigations.MasterPage">
+    <masterPage:MyFlyoutPage Title="Master Page" IconImageSource="apps.png" />
+    <NavigationPage Title="Page 1" IconImageSource="home.png">
+        <x:Arguments>
+            <local:ContentPage1 />
+        </x:Arguments>
+    </NavigationPage>
+    <ContentPage Title="Page 2" IconImageSource="user.png">
+        <Label Text="Content of page 2" HorizontalOptions="Center" VerticalOptions="Center"/>
+    </ContentPage>
+</TabbedPage>

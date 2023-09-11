@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage IsPresented="True"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="xamarin.forms.course.Navigations.MasterPage.MyFlyoutPage"
+             xmlns:pages="clr-namespace:xamarin.forms.course.Navigations.MasterPage"
+             xmlns:c="clr-namespace:xamarin.forms.course.Lists">
+  <FlyoutPage.Flyout>
+    <pages:MyFlyoutPageFlyout x:Name="FlyoutPage" />
+  </FlyoutPage.Flyout>
+  <FlyoutPage.Detail>
+    <NavigationPage>
+      <x:Arguments>
+        <c:ContactDetailPage />
+      </x:Arguments>
+    </NavigationPage>
+  </FlyoutPage.Detail>
+</FlyoutPage>
