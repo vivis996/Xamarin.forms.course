@@ -5,7 +5,15 @@
     x:Class="xamarin.forms.course.BeyondBasics.MainPage">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="buttonBackgroundColor">Green</Color>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Green" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <!--<Style x:Key="primaryButton" TargetType="Button" BasedOn="{StaticResource Key=button}">
+                <Setter Property="BackgroundColor" Value="Pink" />
+            </Style>-->
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Padding>
@@ -20,17 +28,8 @@
                 <Color x:Key="textColor">White</Color>
             </ResourceDictionary>
         </StackLayout.Resources>
-        <Button Text="Login" 
-			BackgroundColor="{DynamicResource buttonBackgroundColor}" 
-			TextColor="{StaticResource textColor}"
-			CornerRadius="{StaticResource borderRadius}"
-			FontAttributes="Bold" />
-
-        <Button Text="Register" 
-			BackgroundColor="{DynamicResource buttonBackgroundColor}" 
-			TextColor="{StaticResource textColor}"
-			CornerRadius="{StaticResource borderRadius}"
-			FontAttributes="Bold" />
+        <Button Text="Login" BackgroundColor="Pink" />
+        <Button Text="Register" />
         <Button Text="Change Style" Clicked="Button_Clicked" />
     </StackLayout>
 </ContentPage>
